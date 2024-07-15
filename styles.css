@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    background-color: #121212;
+    color: #ffffff;
+    scroll-behavior: smooth;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: #1f1f1f;
+    padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 15px;
+    border: 2px solid transparent;
+    transition: border 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    border: 2px solid #ff6f61;
+    color: #ff6f61;
+    background-color: #333333;
+}
+
+main {
+    padding-top: 70px; /* Extra space to account for fixed header */
+}
+
+section {
+    padding: 80px 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+section h1, section h2 {
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ff6f61;
+    padding-bottom: 10px;
+    font-size: 2.5rem;
+}
+
+section p {
+    max-width: 600px;
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+.logo {
+    width: 150px;
+    height: 150px;
+    margin-top: 20px;
+}
+
+section {
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 5px #ff6f61, 0 0 10px #ff6f61, 0 0 15px #ff6f61, 0 0 20px #ff6f61, 0 0 25px #ff6f61, 0 0 30px #ff6f61, 0 0 35px #ff6f61;
+    }
+    100% {
+        box-shadow: 0 0 5px #ff6f61, 0 0 10px #ff6f61, 0 0 15px #ff6f61, 0 0 20px #ff6f61, 0 0 25px #ff6f61, 0 0 30px #ff6f61, 0 0 35px #ff6f61;
+    }
+}
+
+.logo {
+    animation: glow 1.5s infinite alternate;
+}
